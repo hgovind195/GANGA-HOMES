@@ -136,20 +136,20 @@ export default function Footer() {
 
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-xs text-[#717975]">
-          <div className="flex items-center gap-4">
-            <Link href="/" aria-label="Headquarters" className="hover:text-[#FFDF9B] transition-colors">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Link href="/" aria-label="Headquarters" className="p-1.5 hover:text-[#FFDF9B] transition-colors">
               <Building2 className="w-5 h-5" />
             </Link>
-            <a href="mailto:gangahomesanddevelopers@gmail.com" aria-label="Official Mail" className="hover:text-[#FFDF9B] transition-colors">
+            <a href="mailto:gangahomesanddevelopers@gmail.com" aria-label="Official Mail" className="p-1.5 hover:text-[#FFDF9B] transition-colors">
               <Mail className="w-5 h-5" />
             </a>
-            <a href="tel:+919961832347" aria-label="Direct Call" className="hover:text-[#FFDF9B] transition-colors">
+            <a href="tel:+919961832347" aria-label="Direct Call" className="p-1.5 hover:text-[#FFDF9B] transition-colors">
               <Phone className="w-5 h-5" />
             </a>
-            <a href="https://wa.me/919961832347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Concierge" className="hover:text-[#25D366] transition-colors">
+            <a href="https://wa.me/919961832347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Concierge" className="p-1.5 hover:text-[#25D366] transition-colors">
               <MessageCircle className="w-5 h-5 text-[#25D366]" />
             </a>
-            <Link href="/contact" aria-label="Gallery Map Location" className="hover:text-[#FFDF9B] transition-colors">
+            <Link href="/contact" aria-label="Gallery Map Location" className="p-1.5 hover:text-[#FFDF9B] transition-colors">
               <MapPin className="w-5 h-5" />
             </Link>
           </div>

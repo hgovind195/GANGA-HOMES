@@ -3,12 +3,13 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, Verified } from "lucide-react";
+import { Calendar, Verified, Menu, X, MessageCircle } from "lucide-react";
 
 export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [pillStyle, setPillStyle] = useState({
     left: 0,
     width: 0,
@@ -20,6 +21,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   // Only track scroll position for navbar style & progress bar - NOT for section selection
   useEffect(() => {
@@ -184,14 +190,88 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3 relative z-10">
           <Link
             href="/contact"
-            className="relative overflow-hidden inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#725b24] via-[#92742e] to-[#725b24] text-white font-label-sm text-[11px] sm:text-[12px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all duration-300 shadow-[0_4px_16px_rgba(114,91,36,0.5)] border border-[#ffdf9b]/40 pulse-gold"
+            className="hidden sm:inline-flex relative overflow-hidden items-center justify-center gap-1.5 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#725b24] via-[#92742e] to-[#725b24] text-white font-label-sm text-[11px] sm:text-[12px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all duration-300 shadow-[0_4px_16px_rgba(114,91,36,0.5)] border border-[#ffdf9b]/40 pulse-gold"
           >
             <span className="absolute top-0 left-0 w-8 h-full bg-white/30 transform -skew-x-12 animate-gold-shine pointer-events-none"></span>
             <span className="font-semibold tracking-[0.16em]">Book Visit</span>
-            <Calendar className="w-4 h-4 text-[#ffdf9b]" />
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ffdf9b]" />
           </Link>
+
+          {/* Mobile Hamburger Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] text-[#FFDF9B] hover:text-white transition-all duration-200 flex items-center justify-center focus:outline-none"
+            aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Responsive Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden w-full max-w-7xl mx-auto px-4 mt-2 transition-all duration-300 animate-fadeIn">
+          <div className="rounded-2xl bg-[#111113]/95 backdrop-blur-2xl border border-[#d4af37]/35 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-5 flex flex-col gap-3">
+            <div className="flex flex-col gap-1 pb-3 border-b border-white/10">
+              <span className="font-label-sm text-[10px] uppercase tracking-[0.2em] text-[#d4af37] font-semibold">
+                Navigation Portfolio
+              </span>
+              <span className="text-xs text-neutral-400 font-body-sm">
+                Explore Ganga Homes &amp; Developers
+              </span>
+            </div>
+
+            <nav className="flex flex-col gap-1 py-1">
+              {navLinks.map((link, idx) => {
+                const isSelected = selectedIndex === idx;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => {
+                      setSelectedIndex(idx);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                      isSelected
+                        ? "bg-[#725b24]/30 text-white border border-[#d4af37]/40 shadow-inner"
+                        : "text-neutral-300 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      {isSelected && <span className="w-2 h-2 rounded-full bg-[#d4af37]"></span>}
+                      <span>{link.name}</span>
+                    </span>
+                    <span className="font-mono text-[11px] text-neutral-500">0{idx + 1}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-2.5">
+              <a
+                href="https://wa.me/919961832347"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#128C7E] hover:bg-[#075E54] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp Concierge</span>
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#725b24] to-[#92742e] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+              >
+                <Calendar className="w-4 h-4 text-[#ffdf9b]" />
+                <span>Book Atelier Visit</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

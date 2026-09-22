@@ -41,18 +41,18 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="w-full py-16 px-5 sm:px-8 md:px-16 bg-[#FCF9F4] relative scroll-mt-24" id="standards">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#FCF9F4] relative scroll-mt-24" id="standards">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="flex flex-col gap-2 max-w-xl">
             <span className="font-label-sm text-xs uppercase tracking-[0.25em] text-[#725B24] font-bold">
               The Architectural Standard
             </span>
-            <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#1C1C19] font-bold">
+            <h2 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-[#1C1C19] font-bold">
               Why Choose Ganga Homes
             </h2>
-            <p className="font-body-md text-base text-[#404945] font-medium leading-relaxed">
+            <p className="font-body-md text-sm sm:text-base text-[#404945] font-medium leading-relaxed">
               True luxury is uncompromised peace of mind. Every square foot is engineered through rigorous structural ethics and meticulous material provenance.
             </p>
           </div>

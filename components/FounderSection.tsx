@@ -7,10 +7,10 @@ import Card3D from "@/components/Card3D";
 
 export default function FounderSection() {
   return (
-    <section className="w-full py-20 px-5 sm:px-8 md:px-16 bg-[#111113] border-y border-[#d4af37]/20 relative overflow-hidden scroll-mt-24" id="leadership">
+    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#111113] border-y border-[#d4af37]/20 relative overflow-hidden scroll-mt-24" id="leadership">
       <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#d4af37]/5 blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
         {/* Left: Founder Portrait & Badges */}
         <div className="lg:col-span-5 relative">
           <Card3D maxTilt={10} scale={1.02} className="relative z-10">
@@ -38,7 +38,7 @@ export default function FounderSection() {
           </Card3D>
 
           {/* Floating Credential Badge with 3D Pop */}
-          <div className="absolute -bottom-6 -right-2 sm:bottom-6 sm:-right-6 p-4 rounded-xl bg-[#1c1b1c] shadow-2xl border border-[#d4af37]/40 max-w-xs flex items-center gap-4 backdrop-blur-md z-20 hover:scale-105 transition-transform duration-300">
+          <div className="absolute -bottom-5 -right-1 sm:bottom-6 sm:-right-6 p-3 sm:p-4 rounded-xl bg-[#1c1b1c] shadow-2xl border border-[#d4af37]/40 max-w-[270px] sm:max-w-xs flex items-center gap-3 sm:gap-4 backdrop-blur-md z-20 hover:scale-105 transition-transform duration-300">
             <div className="w-12 h-12 rounded-full bg-[#d4af37] text-[#111113] flex items-center justify-center flex-shrink-0 shadow-md">
               <CheckCircle2 className="w-6 h-6 text-[#111113]" />
             </div>

@@ -64,18 +64,18 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full py-20 px-5 sm:px-8 md:px-16 bg-[#F6F3EE] border-t border-[#C0C8C4]/60 relative scroll-mt-24" id="consultation">
-      <div className="max-w-6xl mx-auto flex flex-col gap-12">
+    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#F6F3EE] border-t border-[#C0C8C4]/60 relative scroll-mt-24" id="consultation">
+      <div className="max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-3">
           <div className="inline-flex items-center gap-2 text-[#725B24] font-label-sm uppercase tracking-[0.25em] font-bold">
             <span className="w-2 h-2 rounded-full bg-[#725B24]"></span>
             <span>Connect With Ganga Homes</span>
           </div>
-          <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#111113] font-bold tracking-tight max-w-2xl">
+          <h2 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-[#111113] font-bold tracking-tight max-w-2xl">
             Start Your Journey With Us
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-[#404945] font-normal max-w-2xl leading-relaxed">
+          <p className="font-body-lg text-sm sm:text-base md:text-lg text-[#404945] font-normal max-w-2xl leading-relaxed">
             Whether you are envisioning a bespoke private residence or wish to discuss an architectural commission, our leadership and project team are at your service.
           </p>
         </div>
@@ -83,9 +83,9 @@ export default function ContactForm() {
         {/* Grid: Form & Info */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Form */}
-          <div className="lg:col-span-7 bg-white p-8 rounded-2xl shadow-lg border border-[#E8DFCE]">
+          <div className="lg:col-span-7 bg-white p-5 sm:p-8 rounded-2xl shadow-lg border border-[#E8DFCE]">
             {submitted ? (
-              <div className="p-8 rounded-xl bg-[#0f2347]/10 border border-[#0f2347]/30 flex flex-col items-center text-center gap-4">
+              <div className="p-6 sm:p-8 rounded-xl bg-[#0f2347]/10 border border-[#0f2347]/30 flex flex-col items-center text-center gap-4">
                 <CheckCircle2 className="w-12 h-12 text-[#0f2347]" />
                 <h3 className="font-headline-sm text-xl text-[#0f2347] font-bold">
                   Enquiry Transmitted to WhatsApp
@@ -222,7 +222,7 @@ export default function ContactForm() {
 
           {/* Direct Atelier Details */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-6 rounded-2xl bg-[#111113] text-white border border-[#d4af37]/40 shadow-xl flex flex-col gap-4">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#111113] text-white border border-[#d4af37]/40 shadow-xl flex flex-col gap-4">
               <span className="font-label-sm text-xs uppercase tracking-widest text-[#FFDF9B] font-semibold">
                 Headquarters Atelier
               </span>
@@ -303,7 +303,7 @@ export default function ContactForm() {
             </span>
           </div>
 
-          <div className="w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E8DFCE] shadow-lg bg-neutral-100 relative">
+          <div className="w-full h-[300px] sm:h-[420px] md:h-[450px] rounded-2xl overflow-hidden border border-[#E8DFCE] shadow-lg bg-neutral-100 relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31104.86300252721!2d76.40206303582312!3d9.743509157787088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0879ee8d365d01%3A0xcd4dd2a9147620b1!2sPalliprathussery%2C%20Vaikom!5e0!3m2!1sen!2sin!4v1790094677708!5m2!1sen!2sin"
               width="100%"

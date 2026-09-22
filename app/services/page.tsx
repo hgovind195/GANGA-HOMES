@@ -72,14 +72,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Cards */}
-      <section className="w-full py-20 px-5 sm:px-8 md:px-16 bg-[#FCF9F4] relative">
-        <div className="max-w-7xl mx-auto flex flex-col gap-10">
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#FCF9F4] relative">
+        <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.title}
-                className="group relative rounded-2xl bg-white border border-[#E8DFCE] border-l-4 border-l-[#725B24] hover:border-l-[#0f2347] shadow-sm hover:shadow-xl transition-all duration-300 p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:-translate-y-1 overflow-hidden"
+                className="group relative rounded-2xl bg-white border border-[#E8DFCE] border-l-4 border-l-[#725B24] hover:border-l-[#0f2347] shadow-sm hover:shadow-xl transition-all duration-300 p-5 sm:p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center hover:-translate-y-1 overflow-hidden"
               >
                 {/* Architectural Blueprint Corner Registration Marks */}
                 <div className="absolute top-2.5 left-3 w-2 h-2 border-t-2 border-l-2 border-[#725B24]/30 pointer-events-none group-hover:border-[#725B24] transition-colors"></div>
@@ -151,24 +151,24 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Card Action Link */}
-                  <div className="pt-3 border-t border-[#E8DFCE] flex flex-wrap items-center justify-between gap-3">
+                  <div className="pt-3 border-t border-[#E8DFCE] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <span className="font-label-sm text-[11px] text-[#725B24] flex items-center gap-1 font-medium">
                       <Sparkles className="w-3 h-3 text-[#725B24]" />
                       <span>Direct Atelier Consultation</span>
                     </span>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
                       <a
                         href={`https://wa.me/919961832347?text=${encodeURIComponent(`Hello Ganga Homes, I would like to enquire about your service: ${service.title}.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#128C7E] hover:bg-[#075E54] text-white font-label-sm text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                        className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full bg-[#128C7E] hover:bg-[#075E54] text-white font-label-sm text-xs font-semibold shadow-xs transition-colors cursor-pointer text-center"
                       >
                         <MessageCircle className="w-3.5 h-3.5" />
                         <span>WhatsApp Enquiry</span>
                       </a>
                       <Link
                         href="/contact#consultation"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#725B24] text-white font-label-sm text-xs uppercase tracking-widest font-bold hover:bg-[#0f2347] transition-all duration-300 shadow-xs"
+                        className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full bg-[#725B24] text-white font-label-sm text-xs uppercase tracking-widest font-bold hover:bg-[#0f2347] transition-all duration-300 shadow-xs text-center"
                       >
                         <span>Proposal Brief</span>
                         <ArrowRight className="w-3 h-3" />

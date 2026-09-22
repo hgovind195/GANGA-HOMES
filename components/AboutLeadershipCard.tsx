@@ -13,7 +13,7 @@ export default function AboutLeadershipCard() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Prominent High-Contrast Dark & Gold Card */}
-        <div className="relative rounded-3xl overflow-hidden bg-[#111113] border-2 border-[#d4af37]/60 shadow-[0_25px_60px_rgba(0,0,0,0.95)] p-8 sm:p-12">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#111113] border-2 border-[#d4af37]/60 shadow-[0_25px_60px_rgba(0,0,0,0.95)] p-5 sm:p-10 md:p-12">
             
           {/* Subtle luxury ambient sheen */}
           <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#d4af37]/10 blur-2xl pointer-events-none"></div>

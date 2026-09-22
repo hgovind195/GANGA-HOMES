@@ -209,7 +209,7 @@ export default function ProjectCard({
           onClick={() => setIsDossierOpen(false)}
         >
           <div
-            className="animate-paper-slide relative w-full max-w-3xl bg-white text-[#1C1C19] rounded-2xl border-2 border-[#d4af37]/45 shadow-[0_30px_90px_rgba(0,0,0,0.4),0_0_35px_rgba(15,35,71,0.12)] p-6 sm:p-9 my-auto overflow-hidden"
+            className="animate-paper-slide relative w-full max-w-3xl bg-white text-[#1C1C19] rounded-2xl border-2 border-[#d4af37]/45 shadow-[0_30px_90px_rgba(0,0,0,0.4),0_0_35px_rgba(15,35,71,0.12)] p-4 sm:p-8 my-auto max-h-[92vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Paper Blueprint Registration Corner Marks in Gold */}
@@ -341,13 +341,13 @@ export default function ProjectCard({
 
             {/* Actions on Pure White */}
             <div className="mt-6 pt-4 border-t border-[#F0EDE9] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white">
-              <span className="text-xs text-neutral-500 font-body-sm">
+              <span className="text-xs text-neutral-500 font-body-sm text-center sm:text-left">
                 Supervised under direct leadership of Aneesh V M
               </span>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => setIsDossierOpen(false)}
-                  className="px-5 py-2.5 rounded-full bg-white border border-[#E2D9C8] text-xs font-label-sm uppercase tracking-wider text-[#404945] hover:bg-neutral-50 hover:text-[#1C1C19] transition-colors font-medium shadow-xs"
+                  className="px-5 py-2.5 rounded-full bg-white border border-[#E2D9C8] text-xs font-label-sm uppercase tracking-wider text-[#404945] hover:bg-neutral-50 hover:text-[#1C1C19] transition-colors font-medium shadow-xs text-center"
                 >
                   Close Dossier
                 </button>
@@ -355,14 +355,14 @@ export default function ProjectCard({
                   href={`https://wa.me/919961832347?text=${encodeURIComponent(`Hello Ganga Homes, I would like to enquire about visiting/showing for ${title} (${location}).`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#128C7E] hover:bg-[#075E54] text-white font-label-sm text-xs uppercase tracking-wider font-bold transition-all shadow-md"
+                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#128C7E] hover:bg-[#075E54] text-white font-label-sm text-xs uppercase tracking-wider font-bold transition-all shadow-md text-center"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>WhatsApp Enquiry</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0f2347] text-white font-label-sm text-xs uppercase tracking-wider font-bold hover:bg-[#16325c] transition-all shadow-md hover:gap-2.5"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#0f2347] text-white font-label-sm text-xs uppercase tracking-wider font-bold hover:bg-[#16325c] transition-all shadow-md hover:gap-2.5 text-center"
                 >
                   <span>Schedule Site Showing</span>
                   <ArrowRight className="w-3.5 h-3.5" />

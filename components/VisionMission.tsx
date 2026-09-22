@@ -5,23 +5,23 @@ import { Eye, Compass, Check } from "lucide-react";
 
 export default function VisionMission() {
   return (
-    <section className="w-full py-20 px-5 sm:px-8 md:px-16 bg-[#F6F3EE] relative scroll-mt-24" id="ethos">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#F6F3EE] relative scroll-mt-24" id="ethos">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-2">
           <span className="font-label-sm text-xs uppercase tracking-[0.25em] text-[#725B24] font-bold">
             Our Foundation
           </span>
-          <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#1C1C19] font-bold">
+          <h2 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-[#1C1C19] font-bold">
             Purpose &amp; Guiding Ethos
           </h2>
           <div className="w-12 h-0.5 bg-[#725B24] mt-2"></div>
         </div>
 
         {/* 2-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Vision Card */}
-          <div className="group relative flex flex-col justify-between p-8 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#C0C8C4]/60 hover:border-[#E2C381]">
+          <div className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#C0C8C4]/60 hover:border-[#E2C381]">
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <div className="w-14 h-14 rounded-xl bg-[#F0EDE9] flex items-center justify-center text-[#725B24] group-hover:bg-[#725B24] group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -54,7 +54,7 @@ export default function VisionMission() {
           </div>
 
           {/* Mission Card */}
-          <div className="group relative flex flex-col justify-between p-8 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#C0C8C4]/60 hover:border-[#E2C381]">
+          <div className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#C0C8C4]/60 hover:border-[#E2C381]">
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <div className="w-14 h-14 rounded-xl bg-[#F0EDE9] flex items-center justify-center text-[#725B24] group-hover:bg-[#725B24] group-hover:text-white transition-colors duration-300 shadow-sm">

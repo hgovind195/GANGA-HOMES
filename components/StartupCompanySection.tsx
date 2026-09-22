@@ -58,7 +58,7 @@ export default function StartupCompanySection() {
   ];
 
   return (
-    <section className="w-full py-20 px-5 sm:px-8 md:px-16 bg-[#FCF9F4] relative border-b border-[#E8DFCE] overflow-hidden" id="startup-story">
+    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#FCF9F4] relative border-b border-[#E8DFCE] overflow-hidden" id="startup-story">
       {/* Subtle architectural background accents */}
       <div className="absolute -left-20 top-20 w-80 h-80 rounded-full bg-[#d4af37]/8 blur-3xl pointer-events-none"></div>
       <div className="absolute right-0 bottom-10 w-96 h-96 rounded-full bg-[#0f2347]/10 blur-3xl pointer-events-none"></div>

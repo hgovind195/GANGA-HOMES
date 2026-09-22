@@ -6,6 +6,8 @@ import "./globals.css";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#111113",
 };
 
 export const metadata: Metadata = {
@@ -19,7 +21,6 @@ export const metadata: Metadata = {
     "Kerala Heritage Villas",
     "Architectural Contracting Kerala",
     "Aneesh V M",
-
   ],
   authors: [{ name: "Ganga Homes and Developers" }],
   icons: {
@@ -36,9 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#FCF9F4] text-[#1C1C19] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-[#FCDC98] selection:text-[#775F28]">
+      <body className="bg-[#FCF9F4] text-[#1C1C19] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-[#FCDC98] selection:text-[#775F28] overflow-x-hidden w-full relative">
         <Navbar />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>
