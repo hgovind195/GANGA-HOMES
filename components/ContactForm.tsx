@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle2, MessageCircle, ArrowRight } from "lucide-react";
+import ConstructionRoadDivider from "@/components/ConstructionRoadDivider";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -64,7 +65,11 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#F6F3EE] border-t border-[#C0C8C4]/60 relative scroll-mt-24" id="consultation">
+    <div className="w-full relative">
+      {/* Animated Concrete Mixer Road Divider */}
+      <ConstructionRoadDivider />
+
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#F6F3EE] relative scroll-mt-24" id="consultation">
       <div className="max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-3">
@@ -318,6 +323,7 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
