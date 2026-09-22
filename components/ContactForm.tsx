@@ -4,7 +4,11 @@ import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle2, MessageCircle, ArrowRight } from "lucide-react";
 import ConstructionRoadDivider from "@/components/ConstructionRoadDivider";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  showMap?: boolean;
+}
+
+export default function ContactForm({ showMap = false }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -294,34 +298,36 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Interactive Atelier Location Map */}
-        <div className="mt-12 flex flex-col gap-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#E8DFCE]">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#725B24]"></span>
-              <span className="font-label-sm text-xs uppercase tracking-[0.25em] text-[#725B24] font-bold">
-                Atelier Location &amp; Directions
+        {/* Interactive Atelier Location Map - Rendered on Contact section */}
+        {showMap && (
+          <div className="mt-12 flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#E8DFCE]">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#725B24]"></span>
+                <span className="font-label-sm text-xs uppercase tracking-[0.25em] text-[#725B24] font-bold">
+                  Atelier Location &amp; Directions
+                </span>
+              </div>
+              <span className="font-body-sm text-xs text-[#404945]">
+                Pallipurathuserry, Vaikom, Kottayam &bull; Kerala 686141
               </span>
             </div>
-            <span className="font-body-sm text-xs text-[#404945]">
-              Pallipurathuserry, Vaikom, Kottayam &bull; Kerala 686141
-            </span>
-          </div>
 
-          <div className="w-full h-[300px] sm:h-[420px] md:h-[450px] rounded-2xl overflow-hidden border border-[#E8DFCE] shadow-lg bg-neutral-100 relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31104.86300252721!2d76.40206303582312!3d9.743509157787088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0879ee8d365d01%3A0xcd4dd2a9147620b1!2sPalliprathussery%2C%20Vaikom!5e0!3m2!1sen!2sin!4v1790094677708!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="Ganga Homes Location Map"
-              className="w-full h-full"
-            ></iframe>
+            <div className="w-full h-[300px] sm:h-[420px] md:h-[450px] rounded-2xl overflow-hidden border border-[#E8DFCE] shadow-lg bg-neutral-100 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31104.86300252721!2d76.40206303582312!3d9.743509157787088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0879ee8d365d01%3A0xcd4dd2a9147620b1!2sPalliprathussery%2C%20Vaikom!5e0!3m2!1sen!2sin!4v1790094677708!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Ganga Homes Location Map"
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       </section>
     </div>

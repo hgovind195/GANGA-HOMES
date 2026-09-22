@@ -22,8 +22,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Contact Section */}
-      <ContactForm />
+      {/* Main Contact Section with Location Map */}
+      <ContactForm showMap={true} />
     </div>
   );
 }
