@@ -23,29 +23,29 @@ export default function FounderSection() {
                 decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-1 text-white">
-                <span className="font-label-sm text-[10px] uppercase tracking-[0.24em] text-[#d4af37] font-semibold">
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-col gap-0.5 sm:gap-1 text-white max-w-[60%] sm:max-w-none">
+                <span className="font-label-sm text-[9px] sm:text-[10px] uppercase tracking-[0.24em] text-[#d4af37] font-semibold">
                   Founding Atelier
                 </span>
-                <span className="font-headline-sm text-2xl tracking-tight font-medium text-white">
+                <span className="font-headline-sm text-lg sm:text-2xl tracking-tight font-medium text-white">
                   Aneesh V M
                 </span>
-                <span className="font-body-sm text-sm text-[#E5E2DD]/90">
+                <span className="font-body-sm text-[11px] sm:text-sm text-[#E5E2DD]/90">
                   Founder &amp; Managing Director
                 </span>
               </div>
             </div>
           </Card3D>
 
-          {/* Floating Credential Badge with 3D Pop */}
-          <div className="absolute -bottom-5 -right-1 sm:bottom-6 sm:-right-6 p-3 sm:p-4 rounded-xl bg-[#1c1b1c] shadow-2xl border border-[#d4af37]/40 max-w-[270px] sm:max-w-xs flex items-center gap-3 sm:gap-4 backdrop-blur-md z-20 hover:scale-105 transition-transform duration-300">
-            <div className="w-12 h-12 rounded-full bg-[#d4af37] text-[#111113] flex items-center justify-center flex-shrink-0 shadow-md">
-              <CheckCircle2 className="w-6 h-6 text-[#111113]" />
+          {/* Floating Credential Badge with 3D Pop - Compact on Mobile to Prevent Any Overlap */}
+          <div className="absolute bottom-3 right-3 sm:bottom-6 sm:-right-6 p-2 sm:p-4 rounded-xl bg-[#1c1b1c]/95 sm:bg-[#1c1b1c] shadow-2xl border border-[#d4af37]/40 max-w-[135px] sm:max-w-xs flex items-center gap-2 sm:gap-4 backdrop-blur-md z-20 hover:scale-105 transition-transform duration-300">
+            <div className="w-7 h-7 sm:w-12 sm:h-12 rounded-full bg-[#d4af37] text-[#111113] flex items-center justify-center flex-shrink-0 shadow-md">
+              <CheckCircle2 className="w-4 h-4 sm:w-6 sm:h-6 text-[#111113]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-headline-sm text-lg text-white font-semibold">14+ Years</span>
-              <span className="font-body-sm text-xs text-[#E5E2DD]/90 leading-tight">
-                Mastery in Civil &amp; Interior Architecture
+              <span className="font-headline-sm text-xs sm:text-lg text-white font-semibold whitespace-nowrap">14+ Years</span>
+              <span className="font-body-sm text-[9px] sm:text-xs text-[#E5E2DD]/90 leading-tight">
+                Mastery in Architecture
               </span>
             </div>
           </div>

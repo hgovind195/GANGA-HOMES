@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Small Tiles Grid */}
-      <section className="w-full py-16 px-5 sm:px-8 md:px-16 bg-[#FCF9F4]">
+      <section className="w-full py-10 sm:py-16 px-4 sm:px-8 md:px-16 bg-[#FCF9F4]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((p) => (

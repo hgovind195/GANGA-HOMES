@@ -66,7 +66,15 @@ export default function ProjectCard({
       <Card3D maxTilt={6} scale={1.01} className="h-full">
         <div
           onClick={() => setIsDossierOpen(true)}
-          className="group relative h-full flex flex-col rounded-2xl overflow-hidden bg-white border border-[#E8DFCE] border-l-4 border-l-[#725B24] hover:border-l-[#0f2347] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsDossierOpen(true);
+            }
+          }}
+          className="group relative h-full flex flex-col rounded-2xl overflow-hidden bg-white border border-[#E8DFCE] border-l-4 border-l-[#725B24] hover:border-l-[#0f2347] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer select-none active:scale-[0.99]"
         >
           {/* Architectural Blueprint Corner Registration Marks */}
           <div className="absolute top-2.5 left-2.5 w-2 h-2 border-t-2 border-l-2 border-[#725B24]/40 pointer-events-none group-hover:border-[#725B24] transition-colors z-20"></div>
@@ -86,15 +94,15 @@ export default function ProjectCard({
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
 
             {/* Top Status Pill - Clean & Minimal */}
-            <div className="absolute top-4 left-4 flex items-center gap-2 z-10">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2 z-10">
               {status === "Ongoing" ? (
-                <span className="px-3 py-1 rounded-full text-xs font-label-sm tracking-wider uppercase font-semibold backdrop-blur-md border bg-[#725B24] text-white border-[#FFDF9B]/40 shadow-sm flex items-center gap-1.5">
+                <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-label-sm tracking-wider uppercase font-semibold backdrop-blur-md border bg-[#725B24] text-white border-[#FFDF9B]/40 shadow-sm flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FFDF9B]"></span>
                   <span>Ongoing Project</span>
                 </span>
               ) : (
                 <span
-                  className={`px-3 py-1 rounded-full text-xs font-label-sm tracking-wider uppercase font-semibold backdrop-blur-md border ${getStatusBadge()} flex items-center gap-1.5`}
+                  className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-label-sm tracking-wider uppercase font-semibold backdrop-blur-md border ${getStatusBadge()} flex items-center gap-1.5`}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-current"></span>
                   <span>{status}</span>
@@ -102,83 +110,83 @@ export default function ProjectCard({
               )}
             </div>
 
-            {/* Hover Blueprint Prompt Overlay */}
-            <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-[#FFDF9B] border border-white/20 text-[10px] font-mono uppercase tracking-wider flex items-center gap-1">
+            {/* Hover/Tap Blueprint Prompt Overlay */}
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-black/70 backdrop-blur-md text-[#FFDF9B] border border-white/20 text-[9px] sm:text-[10px] font-mono uppercase tracking-wider flex items-center gap-1">
                 <FileText className="w-3 h-3" />
                 <span>Open Dossier</span>
               </span>
             </div>
 
             {/* Location & Category Badge */}
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white z-10">
-              <div className="flex items-center gap-1.5 text-xs font-body-sm font-medium">
-                <MapPin className="w-3.5 h-3.5 text-[#FFDF9B]" />
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white z-10">
+              <div className="flex items-center gap-1 text-[11px] sm:text-xs font-body-sm font-medium">
+                <MapPin className="w-3.5 h-3.5 text-[#FFDF9B] shrink-0" />
                 <span>{location}, Kerala</span>
               </div>
-              <span className="font-mono text-[10px] uppercase text-[#FFDF9B] tracking-wider font-semibold bg-black/40 px-2 py-0.5 rounded-md border border-white/10">
+              <span className="font-mono text-[9px] sm:text-[10px] uppercase text-[#FFDF9B] tracking-wider font-semibold bg-black/40 px-2 py-0.5 rounded-md border border-white/10">
                 {category}
               </span>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-5 flex flex-col gap-4">
+          <div className="p-4 sm:p-5 flex flex-col gap-3.5 sm:gap-4">
             {/* Top Technical Metadata Bar */}
             <div className="flex items-center justify-between pb-1 border-b border-[#F0EDE9]">
-              <span className="font-mono text-[10px] tracking-wider text-[#725B24] font-bold uppercase">
+              <span className="font-mono text-[9px] sm:text-[10px] tracking-wider text-[#725B24] font-bold uppercase">
                 Bespoke Residential Commission
               </span>
-              <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FCF9F4] border border-[#E8DFCE] font-mono text-[9px] text-[#725B24] font-semibold">
+              <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#FCF9F4] border border-[#E8DFCE] font-mono text-[8px] sm:text-[9px] text-[#725B24] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#725B24]"></span>
                 <span>PRJ-01 &bull; ACTIVE</span>
               </div>
             </div>
 
-            <h3 className="font-headline-sm text-xl text-[#1C1C19] font-bold group-hover:text-[#0f2347] transition-colors flex items-center justify-between">
+            <h3 className="font-headline-sm text-lg sm:text-xl text-[#1C1C19] font-bold group-hover:text-[#0f2347] transition-colors flex items-center justify-between">
               <span>{title}</span>
-              <span className="font-mono text-[10px] text-[#725B24] font-normal underline decoration-dotted">
+              <span className="font-mono text-[9px] sm:text-[10px] text-[#725B24] font-normal underline decoration-dotted">
                 View Dossier &rarr;
               </span>
             </h3>
 
             {/* Specification Matrix with Plain Single-Color Icons */}
-            <div className="grid grid-cols-3 gap-2 py-3 border-y border-[#F0EDE9] font-body-sm text-xs text-[#404945] bg-[#FBF9F5] px-3.5 rounded-xl">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2.5 sm:py-3 border-y border-[#F0EDE9] font-body-sm text-[11px] sm:text-xs text-[#404945] bg-[#FBF9F5] px-2.5 sm:px-3.5 rounded-xl">
               {sqft && (
                 <div className="flex flex-col gap-0.5">
-                  <span className="font-label-sm text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
-                    <Ruler className="w-3 h-3 text-[#725B24]" />
+                  <span className="font-label-sm text-[9px] sm:text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
+                    <Ruler className="w-3 h-3 text-[#725B24] shrink-0" />
                     <span>Area</span>
                   </span>
-                  <span className="font-semibold text-[#1C1C19]">{sqft}</span>
+                  <span className="font-semibold text-[#1C1C19] truncate">{sqft}</span>
                 </div>
               )}
               {units && (
                 <div className="flex flex-col gap-0.5">
-                  <span className="font-label-sm text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
-                    <Hammer className="w-3 h-3 text-[#725B24]" />
-                    <span>Work Type</span>
+                  <span className="font-label-sm text-[9px] sm:text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
+                    <Hammer className="w-3 h-3 text-[#725B24] shrink-0" />
+                    <span>Work</span>
                   </span>
-                  <span className="font-semibold text-[#1C1C19]">{units}</span>
+                  <span className="font-semibold text-[#1C1C19] truncate">{units}</span>
                 </div>
               )}
               <div className="flex flex-col gap-0.5">
-                <span className="font-label-sm text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-[#725B24]" />
-                  <span>Location</span>
+                <span className="font-label-sm text-[9px] sm:text-[10px] uppercase tracking-wider text-[#725B24] font-bold flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-[#725B24] shrink-0" />
+                  <span>Place</span>
                 </span>
-                <span className="font-semibold text-[#1C1C19]">{location}</span>
+                <span className="font-semibold text-[#1C1C19] truncate">{location}</span>
               </div>
             </div>
 
             {/* Ongoing Active Milestone Status Strip */}
             {status === "Ongoing" && (
-              <div className="flex items-center justify-between px-3.5 py-2 rounded-xl bg-[#F6F3EE] border border-[#E5E2DD] text-[11px] font-mono text-[#404945]">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-[#725B24]" />
-                  <span>Execution: Framing &amp; Masonry</span>
+              <div className="flex items-center justify-between px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-[#F6F3EE] border border-[#E5E2DD] text-[10px] sm:text-[11px] font-mono text-[#404945]">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Clock className="w-3.5 h-3.5 text-[#725B24] shrink-0" />
+                  <span className="truncate">Framing &amp; Masonry</span>
                 </div>
-                <span className="text-[9px] bg-[#725B24]/10 text-[#725B24] border border-[#725B24]/20 px-2 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                <span className="text-[8px] sm:text-[9px] bg-[#725B24]/10 text-[#725B24] border border-[#725B24]/20 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider shrink-0">
                   On Schedule
                 </span>
               </div>
@@ -192,10 +200,10 @@ export default function ProjectCard({
                   e.stopPropagation();
                   setIsDossierOpen(true);
                 }}
-                className="inline-flex items-center gap-1.5 font-label-sm text-xs uppercase tracking-widest font-bold text-[#725B24] hover:text-[#0f2347] transition-colors"
+                className="inline-flex items-center gap-1.5 font-label-sm text-[11px] sm:text-xs uppercase tracking-widest font-bold text-[#725B24] hover:text-[#0f2347] transition-colors py-1.5 -ml-1 active:opacity-70"
               >
                 <span>Inspect Project Dossier</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform shrink-0" />
               </button>
             </div>
           </div>
@@ -205,11 +213,11 @@ export default function ProjectCard({
       {/* Architectural Paper Sliding Modal */}
       {isDossierOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-6 overflow-y-auto animate-fadeIn"
           onClick={() => setIsDossierOpen(false)}
         >
           <div
-            className="animate-paper-slide relative w-full max-w-3xl bg-white text-[#1C1C19] rounded-2xl border-2 border-[#d4af37]/45 shadow-[0_30px_90px_rgba(0,0,0,0.4),0_0_35px_rgba(15,35,71,0.12)] p-4 sm:p-8 my-auto max-h-[92vh] overflow-y-auto"
+            className="animate-paper-slide relative w-full max-w-3xl bg-white text-[#1C1C19] rounded-2xl border-2 border-[#d4af37]/45 shadow-[0_30px_90px_rgba(0,0,0,0.4),0_0_35px_rgba(15,35,71,0.12)] p-4 sm:p-8 my-auto max-h-[94vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Paper Blueprint Registration Corner Marks in Gold */}
@@ -219,20 +227,20 @@ export default function ProjectCard({
             <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#725B24]/50 pointer-events-none"></div>
 
             {/* Paper Header Strip on Pure White */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#F0EDE9] bg-white">
-              <div className="flex flex-col gap-1">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0f2347]/10 text-[#0f2347] font-mono text-[9px] tracking-widest uppercase font-bold border border-[#0f2347]/20 w-fit">
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-[#F0EDE9] bg-white gap-2">
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#0f2347]/10 text-[#0f2347] font-mono text-[9px] tracking-widest uppercase font-bold border border-[#0f2347]/20 w-fit">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0f2347]"></span>
-                  <span>Architectural Project Dossier &bull; PRJ-01</span>
+                  <span>Project Dossier &bull; PRJ-01</span>
                 </div>
-                <span className="font-label-sm text-xs uppercase tracking-wider text-neutral-400">
-                  Ganga Homes &amp; Developers &bull; Active Commission Portfolio
+                <span className="font-label-sm text-[10px] sm:text-xs uppercase tracking-wider text-neutral-400">
+                  Ganga Homes Active Portfolio
                 </span>
               </div>
 
               <button
                 onClick={() => setIsDossierOpen(false)}
-                className="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#0f2347] text-neutral-600 hover:text-white flex items-center justify-center transition-colors shadow-xs"
+                className="w-10 h-10 min-w-[40px] rounded-full bg-neutral-100 hover:bg-[#0f2347] text-neutral-600 hover:text-white flex items-center justify-center transition-colors shadow-xs active:scale-95"
                 aria-label="Close Dossier"
               >
                 <X className="w-4 h-4" />
@@ -240,7 +248,7 @@ export default function ProjectCard({
             </div>
 
             {/* Image & Key Info */}
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-12 gap-6 items-start bg-white">
+            <div className="mt-4 sm:mt-5 grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-start bg-white">
               <div className="md:col-span-6 relative aspect-[4/3] rounded-xl overflow-hidden border border-[#E8DFCE] shadow-sm bg-neutral-50">
                 <img
                   src={getOptimizedImageUrl(image, { width: 1200, format: "webp", quality: "auto:good" })}

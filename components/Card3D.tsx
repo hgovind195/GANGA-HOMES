@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, ReactNode } from "react";
+import React, { useState, useRef, useEffect, ReactNode } from "react";
 
 interface Card3DProps {
   children: ReactNode;
@@ -21,9 +21,18 @@ export default function Card3D({
   const [transformStyle, setTransformStyle] = useState("");
   const [glareStyle, setGlareStyle] = useState({ opacity: 0, x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    // Detect touch / non-hover devices (mobile & tablets)
+    if (typeof window !== "undefined") {
+      const hasTouch = window.matchMedia("(hover: none) or (pointer: coarse)").matches;
+      setIsTouchDevice(hasTouch);
+    }
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (isTouchDevice || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -46,14 +55,22 @@ export default function Card3D({
   };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    if (!isTouchDevice) {
+      setIsHovered(true);
+    }
   };
 
   const handleMouseLeave = () => {
+    if (isTouchDevice) return;
     setIsHovered(false);
     setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
     setGlareStyle((prev) => ({ ...prev, opacity: 0 }));
   };
+
+  // On touch/mobile devices, render clean flat container to never intercept gestures or block clicks
+  if (isTouchDevice) {
+    return <div className={`relative ${className}`}>{children}</div>;
+  }
 
   return (
     <div
@@ -80,3 +97,4 @@ export default function Card3D({
     </div>
   );
 }
+
