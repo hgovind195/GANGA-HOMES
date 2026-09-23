@@ -179,6 +179,7 @@ export default function ContactForm({ showMap = false }: ContactFormProps) {
                       className="px-4 py-2.5 rounded-lg bg-[#FCF9F4] border border-[#E2D9C8] font-body-sm text-sm text-[#1C1C19] focus:outline-none focus:border-[#725B24] transition-colors"
                     >
                       <option value="Residential Villa">Bespoke Heritage Villa</option>
+                      <option value="Home Maintenance & Repairs">Home Maintenance &amp; Repairs</option>
                       <option value="Boutique Apartments">Luxury Apartment Suite</option>
                       <option value="Commercial Enclave">Commercial Address</option>
                       <option value="Land Parcel">Strategic Land Parcel</option>

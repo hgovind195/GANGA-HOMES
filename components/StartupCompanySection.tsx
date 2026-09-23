@@ -11,7 +11,8 @@ import {
   Sparkles,
   Compass,
   Eye,
-  HeartHandshake
+  HeartHandshake,
+  Users
 } from "lucide-react";
 
 export default function StartupCompanySection() {
@@ -39,6 +40,14 @@ export default function StartupCompanySection() {
       description:
         "We uphold absolute professional accountability: 100% legally clear titles, statutory compliance, transparent milestone budgets, and direct engineer-led supervision with zero hidden surprises.",
       badge: "100% Legal & Ethical Clarity",
+    },
+    {
+      icon: Users,
+      tag: "Client Advocacy",
+      title: "Dedicated Client Relations Team",
+      description:
+        "We have an in-house client relations team providing a dedicated single point of contact. Enjoy transparent weekly milestone briefings, live site updates, rapid query response, and proactive guidance from design to handover.",
+      badge: "Dedicated Client Care",
     },
     {
       icon: HeartHandshake,
@@ -99,13 +108,13 @@ export default function StartupCompanySection() {
           </div>
         </div>
 
-        {/* 4 Pillars Aligned with Vision & Mission */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5 Pillars Aligned with Vision, Mission & Client Care */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {startupPillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div key={idx} className="h-full">
-                <div className="group relative h-full flex flex-col justify-between p-7 rounded-2xl bg-white border border-[#E5E2DD] shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="group relative h-full flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white border border-[#E5E2DD] shadow-sm hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">
                       <div className="w-12 h-12 rounded-xl bg-[#F0EDE9] flex items-center justify-center text-[#725B24] group-hover:bg-[#725B24] group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -120,7 +129,7 @@ export default function StartupCompanySection() {
                       <span className="font-label-sm text-[10px] uppercase tracking-widest text-[#725B24] font-bold">
                         {pillar.tag}
                       </span>
-                      <h3 className="font-headline-sm text-lg sm:text-xl text-[#1C1C19] font-bold group-hover:text-[#0f2347] transition-colors">
+                      <h3 className="font-headline-sm text-base sm:text-lg text-[#1C1C19] font-bold group-hover:text-[#0f2347] transition-colors leading-snug">
                         {pillar.title}
                       </h3>
                     </div>
