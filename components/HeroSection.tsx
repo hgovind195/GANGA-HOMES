@@ -23,7 +23,7 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/60 border border-[#d4af37]/40 backdrop-blur-md self-start text-[#ffdf9b] shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
             <span className="font-label-sm text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold">
-              Bespoke Architectural Maison
+              Bespoke Engineering Maison
             </span>
           </div>
 
