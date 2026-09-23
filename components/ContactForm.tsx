@@ -240,7 +240,7 @@ export default function ContactForm({ showMap = false }: ContactFormProps) {
                 <div className="flex flex-col">
                   <span className="text-white font-medium">Ganga Homes &amp; Developers</span>
                   <span>Pallipurathuserry, Vaikom</span>
-                  <span>Kottayam - 686141, Kerala</span>
+                  <span>Kottayam - 686606, Kerala</span>
                 </div>
               </div>
 
@@ -309,7 +309,7 @@ export default function ContactForm({ showMap = false }: ContactFormProps) {
                 </span>
               </div>
               <span className="font-body-sm text-xs text-[#404945]">
-                Pallipurathuserry, Vaikom, Kottayam &bull; Kerala 686141
+                Pallipurathuserry, Vaikom, Kottayam &bull; Kerala 686606
               </span>
             </div>
 
