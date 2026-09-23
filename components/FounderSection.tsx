@@ -30,7 +30,7 @@ export default function FounderSection() {
                 <span className="font-headline-sm text-lg sm:text-2xl tracking-tight font-medium text-white">
                   Aneesh V M
                 </span>
-                <span className="font-body-sm text-[11px] sm:text-sm text-[#E5E2DD]/90">
+                <span className="font-serif text-[11px] sm:text-sm text-[#FFDF9B]/95 italic font-medium">
                   Founder &amp; Managing Director
                 </span>
               </div>
@@ -58,9 +58,9 @@ export default function FounderSection() {
               <span className="w-2 h-2 rounded-full bg-[#d4af37]"></span>
               <span>Leadership &amp; Vision</span>
             </div>
-            <h2 className="font-headline-lg text-3xl sm:text-4xl text-white tracking-tight">
+            <h2 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
               Aneesh V M <br />
-              <span className="font-display-md text-[#FFDF9B] italic font-normal text-xl sm:text-2xl tracking-wide block mt-1">
+              <span className="font-serif text-[#FFDF9B] italic font-normal text-lg sm:text-2xl md:text-3xl tracking-wide block mt-1 sm:mt-1.5">
                 Founder &amp; Managing Director
               </span>
             </h2>

@@ -92,7 +92,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ease-out ${
+      className={`fixed top-0 inset-x-0 z-50 flex flex-col items-center pointer-events-none transition-all duration-500 ease-out ${
         isScrolled ? "pt-2.5 sm:pt-3 px-3 sm:px-4" : "pt-3 sm:pt-4 md:pt-5 px-3 sm:px-6"
       }`}
       id="floatingNavContainer"
@@ -116,7 +116,10 @@ export default function Navbar() {
         {/* Architectural Brand Mark */}
         <Link
           href="/"
-          onClick={() => setSelectedIndex(0)}
+          onClick={() => {
+            setSelectedIndex(0);
+            setMobileMenuOpen(false);
+          }}
           className="flex items-center gap-2.5 sm:gap-3 group text-left relative z-10 py-1"
           id="navBrand"
         >
@@ -197,11 +200,11 @@ export default function Navbar() {
             <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ffdf9b]" />
           </Link>
 
-          {/* Mobile Hamburger Menu Button */}
+          {/* Mobile Hamburger / Navigation Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] text-[#FFDF9B] hover:text-white transition-all duration-200 flex items-center justify-center focus:outline-none"
+            className="lg:hidden p-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] active:scale-95 border border-white/[0.15] text-[#FFDF9B] hover:text-white transition-all duration-200 flex items-center justify-center focus:outline-none min-w-[42px] min-h-[42px] cursor-pointer touch-manipulation pointer-events-auto"
             aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -210,10 +213,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Responsive Mobile Drawer Menu */}
+      {/* Responsive Mobile Drawer Menu with Direct Next.js Link Integration */}
       {mobileMenuOpen && (
-        <div className="lg:hidden w-full max-w-7xl mx-auto px-4 mt-2 transition-all duration-300 animate-fadeIn">
-          <div className="rounded-2xl bg-[#111113]/95 backdrop-blur-2xl border border-[#d4af37]/35 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-5 flex flex-col gap-3">
+        <div className="lg:hidden pointer-events-auto w-full max-w-[96%] sm:max-w-xl mx-auto mt-2 transition-all duration-300 animate-fadeIn z-50">
+          <div className="rounded-2xl bg-[#111113]/98 backdrop-blur-2xl border border-[#d4af37]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_20px_rgba(212,175,55,0.15)] p-4 sm:p-5 flex flex-col gap-3">
             <div className="flex flex-col gap-1 pb-3 border-b border-white/10">
               <span className="font-label-sm text-[10px] uppercase tracking-[0.2em] text-[#d4af37] font-semibold">
                 Navigation Portfolio
@@ -223,28 +226,36 @@ export default function Navbar() {
               </span>
             </div>
 
-            <nav className="flex flex-col gap-1 py-1">
+            <nav className="flex flex-col gap-1.5 py-1">
               {navLinks.map((link, idx) => {
-                const isSelected = selectedIndex === idx;
+                const isSelected = selectedIndex === idx || pathname === link.href;
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
+                    prefetch={true}
                     onClick={() => {
                       setSelectedIndex(idx);
-                      setMobileMenuOpen(false);
+                      // If clicking the current page, scroll smoothly to top and close drawer
+                      if (pathname === link.href) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        setMobileMenuOpen(false);
+                      } else {
+                        // Allow brief moment for touch ripple then close menu
+                        setTimeout(() => setMobileMenuOpen(false), 150);
+                      }
                     }}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    className={`flex items-center justify-between w-full px-4 py-3.5 rounded-xl text-sm font-semibold transition-all cursor-pointer text-left touch-manipulation pointer-events-auto select-none ${
                       isSelected
                         ? "bg-[#725b24]/30 text-white border border-[#d4af37]/40 shadow-inner"
-                        : "text-neutral-300 hover:text-white hover:bg-white/5"
+                        : "text-neutral-200 hover:text-white hover:bg-white/10 active:bg-white/15"
                     }`}
                   >
                     <span className="flex items-center gap-2">
-                      {isSelected && <span className="w-2 h-2 rounded-full bg-[#d4af37]"></span>}
+                      {isSelected && <span className="w-2 h-2 rounded-full bg-[#d4af37] shadow-[0_0_6px_#d4af37]"></span>}
                       <span>{link.name}</span>
                     </span>
-                    <span className="font-mono text-[11px] text-neutral-500">0{idx + 1}</span>
+                    <span className="font-mono text-[11px] text-neutral-400">0{idx + 1}</span>
                   </Link>
                 );
               })}
@@ -255,15 +266,24 @@ export default function Navbar() {
                 href="https://wa.me/919961832347"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#128C7E] hover:bg-[#075E54] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#128C7E] hover:bg-[#075E54] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm cursor-pointer touch-manipulation pointer-events-auto"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Concierge</span>
               </a>
               <Link
                 href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#725b24] to-[#92742e] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+                prefetch={true}
+                onClick={() => {
+                  setSelectedIndex(4);
+                  if (pathname === "/contact") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    setMobileMenuOpen(false);
+                  } else {
+                    setTimeout(() => setMobileMenuOpen(false), 150);
+                  }
+                }}
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-[#725b24] to-[#92742e] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-98 cursor-pointer touch-manipulation pointer-events-auto"
               >
                 <Calendar className="w-4 h-4 text-[#ffdf9b]" />
                 <span>Book Atelier Visit</span>

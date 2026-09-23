@@ -33,7 +33,7 @@ export default function AboutLeadershipCard() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111113]/95 via-transparent to-transparent pointer-events-none"></div>
                 
                 <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-0.5 text-white">
-                  <span className="font-label-sm text-[10px] uppercase tracking-[0.24em] text-[#FFDF9B] font-bold">
+                  <span className="font-serif text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#FFDF9B] font-medium">
                     Founder &amp; Managing Director
                   </span>
                   <span className="font-headline-sm text-xl text-white font-semibold">
@@ -54,10 +54,10 @@ export default function AboutLeadershipCard() {
                     From the Director&apos;s Desk
                   </span>
                 </div>
-                <h2 className="font-headline-lg text-3xl sm:text-4xl text-white font-bold tracking-tight">
+                <h2 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-white font-bold tracking-tight">
                   A Message from Leadership
                 </h2>
-                <span className="font-serif text-lg text-[#FFDF9B] italic font-normal -mt-1">
+                <span className="font-serif text-base sm:text-xl text-[#FFDF9B] italic font-normal -mt-1 block">
                   Aneesh V M &mdash; Founder &amp; Managing Director
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function AboutLeadershipCard() {
                   <span className="font-handwriting text-2xl sm:text-3xl text-[#FFDF9B]">
                     Aneesh V M
                   </span>
-                  <span className="font-label-sm text-[10px] uppercase tracking-widest text-[#d4af37]">
+                  <span className="font-serif text-[11px] sm:text-xs text-[#d4af37] tracking-wider font-medium">
                     Founder &amp; Managing Director &bull; Ganga Homes &amp; Developers
                   </span>
                 </div>
