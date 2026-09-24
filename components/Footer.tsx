@@ -100,6 +100,7 @@ export default function Footer() {
               <span>Pallipurathuserry, Vaikom</span>
               <span>Kottayam - 686606, Kerala</span>
               <span className="mt-2 text-white">Direct: <a href="tel:+919961832347" className="hover:text-[#FFDF9B] transition-colors">+91 99618 32347</a></span>
+              <span className="text-white">Office: <a href="tel:+917012926113" className="hover:text-[#FFDF9B] transition-colors">+91 70129 26113</a></span>
               <span className="text-white">WhatsApp: <a href="https://wa.me/919961832347" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:underline transition-colors">+91 99618 32347</a></span>
               <span>Private Showing: <a href="mailto:gangahomesanddevelopers@gmail.com" className="hover:text-[#FFDF9B] transition-colors">gangahomesanddevelopers@gmail.com</a></span>
             </div>

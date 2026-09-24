@@ -288,6 +288,24 @@ export default function ContactForm({ showMap = false }: ContactFormProps) {
                 </a>
               </div>
 
+              <div className="flex items-center justify-between gap-3 text-sm text-neutral-300 font-body-sm pt-3 border-t border-white/10">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-neutral-400 font-label-sm uppercase">Office Phone</span>
+                    <a href="tel:+917012926113" className="text-white hover:text-[#FFDF9B] font-medium">
+                      +91 70129 26113
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="tel:+917012926113"
+                  className="px-3 py-1.5 rounded-full bg-[#d4af37]/20 hover:bg-[#d4af37]/30 text-[#FFDF9B] text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
+                >
+                  Call
+                </a>
+              </div>
+
               <div className="flex items-center gap-3 text-sm text-neutral-300 font-body-sm pt-3 border-t border-white/10">
                 <Mail className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
                 <div className="flex flex-col min-w-0 flex-1">
