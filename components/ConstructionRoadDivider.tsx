@@ -120,11 +120,13 @@ export default function ConstructionRoadDivider() {
             }`}
           ></span>
           <span className="font-semibold text-[#1C1C19]">
-            {isSwiping ? `${speed} KM/H` : "PARKED &bull; 0 KM/H"}
+            {isSwiping ? `${speed} KM/H` : "PARK"}
           </span>
-          <span className="hidden sm:inline text-neutral-400">
-            {isSwiping ? "&bull; CONCRETE IN TRANSIT" : "&bull; MIXER CHURNING"}
-          </span>
+          {isSwiping && (
+            <span className="hidden sm:inline text-neutral-400">
+              • CONCRETE IN TRANSIT
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2 sm:gap-4 text-[9px] sm:text-[10px] text-neutral-400 shrink-0">
           <span className="hidden md:inline">FLEET NO. GH-MIXER-08</span>
