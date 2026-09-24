@@ -255,7 +255,6 @@ export default function Navbar() {
                       {isSelected && <span className="w-2 h-2 rounded-full bg-[#d4af37] shadow-[0_0_6px_#d4af37]"></span>}
                       <span>{link.name}</span>
                     </span>
-                    <span className="font-mono text-[11px] text-neutral-400">0{idx + 1}</span>
                   </Link>
                 );
               })}
