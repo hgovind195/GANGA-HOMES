@@ -10,7 +10,6 @@ export default function ServicesPage() {
       title: "Demolition & Comprehensive Renovation",
       subtitle: "Controlled Dismantling & Modern Remodeling",
       tag: "CIVIL & STRUCTURAL",
-      specCode: "SPEC-01",
       description:
         "Specialized engineering-led demolition and full-scale renovation solutions for residential and commercial properties. From precision structural dismantling and load-bearing adjustments to complete modern layout transformations and turnkey aesthetic revitalization.",
       features: [
@@ -25,8 +24,6 @@ export default function ServicesPage() {
       title: "Comprehensive Home Maintenance & Repairs",
       subtitle: "In-House Technical Team & Preventative Upkeep",
       tag: "PROPERTY CARE & REPAIR",
-      specCode: "SPEC-02",
-      badge: "We also do maintenance works",
       ctaText: "Schedule Maintenance",
       description:
         "We offer an in-house, dedicated maintenance and repair team to handle all aspects of property upkeep, structural fixes, and seasonal maintenance. Whether it is an older house, a heritage property, or a home not originally built by us, we provide full-scale restoration, structural repairs, electrical/plumbing overhauls, painting, and routine servicing with reliable, quality craftsmanship.",
@@ -42,7 +39,6 @@ export default function ServicesPage() {
       title: "Interior Masterplanning & Decor",
       subtitle: "Custom Joinery & Lighting Curation",
       tag: "INTERIOR ATELIER",
-      specCode: "SPEC-03",
       description:
         "Bespoke interior design solutions led by certified interior designers, seamlessly blending space optimization, ambient lighting, and artisanal woodwork.",
       features: [
@@ -57,7 +53,6 @@ export default function ServicesPage() {
       title: "Architectural Contracting & Turnkey",
       subtitle: "Commercial & Multi-Family Enclaves",
       tag: "EPC CONTRACTING",
-      specCode: "SPEC-04",
       description:
         "Complete EPC turnkey project execution for commercial complexes, executive apartment towers, and gated residential communities.",
       features: [
@@ -119,20 +114,6 @@ export default function ServicesPage() {
                         <span className="font-label-sm text-[8px] sm:text-[9px] uppercase tracking-widest text-neutral-400">
                           Discipline Standard
                         </span>
-                      </div>
-                    </div>
-
-                    {/* Architectural Spec Pill & Tagline Badge */}
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      {service.badge && (
-                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#d4af37]/15 text-[#725B24] border border-[#d4af37]/40 font-label-sm text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-xs">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#725B24] animate-pulse"></span>
-                          <span>{service.badge}</span>
-                        </div>
-                      )}
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-[#FCF9F4] border border-[#E8DFCE] font-mono text-[9px] sm:text-[10px] text-[#725B24] font-semibold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#725B24] group-hover:bg-[#0f2347] transition-colors"></span>
-                        <span>{service.specCode}</span>
                       </div>
                     </div>
                   </div>

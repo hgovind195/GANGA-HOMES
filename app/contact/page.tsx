@@ -17,7 +17,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="font-body-lg text-base sm:text-lg text-[#E5E2DD] max-w-2xl leading-relaxed mt-2">
-            Schedule a confidential showing or consult directly with Aneesh V M and senior atelier leadership.
+            Schedule a confidential viewing or consult directly with Aneesh V M and senior atelier leadership.
           </p>
         </div>
       </section>
