@@ -24,9 +24,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ganga Homes and Developers" }],
   icons: {
-    icon: "https://res.cloudinary.com/w1tsvtbe/image/upload/f_webp,q_auto,w_128,c_limit/v1790008909/WhatsApp_Image_2026-09-06_at_1.22.50_PM_dqtlyg.jpg",
-    shortcut: "https://res.cloudinary.com/w1tsvtbe/image/upload/f_webp,q_auto,w_128,c_limit/v1790008909/WhatsApp_Image_2026-09-06_at_1.22.50_PM_dqtlyg.jpg",
-    apple: "https://res.cloudinary.com/w1tsvtbe/image/upload/f_webp,q_auto,w_180,c_limit/v1790008909/WhatsApp_Image_2026-09-06_at_1.22.50_PM_dqtlyg.jpg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
