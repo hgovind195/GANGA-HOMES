@@ -114,17 +114,12 @@ export default function ConstructionRoadDivider() {
       {/* Top Header Strip: Speedometer & Fleet Telemetry */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 flex items-center justify-between text-neutral-400 font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-1">
         <div className="flex items-center gap-2 text-[#725B24]">
-          <span
-            className={`w-1.5 h-1.5 rounded-full ${
-              isSwiping ? "bg-[#128C7E] animate-ping" : "bg-[#725B24]"
-            }`}
-          ></span>
           <span className="font-semibold text-[#1C1C19]">
             {isSwiping ? `${speed} KM/H` : "PARK"}
           </span>
           {isSwiping && (
             <span className="hidden sm:inline text-neutral-400">
-              • CONCRETE IN TRANSIT
+              CONCRETE IN TRANSIT
             </span>
           )}
         </div>
@@ -287,7 +282,11 @@ export default function ConstructionRoadDivider() {
                 <img
                   src="/truck-wheel.png"
                   alt=""
+                  width={70}
+                  height={70}
                   className="w-full h-full object-contain pointer-events-none"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
@@ -306,7 +305,11 @@ export default function ConstructionRoadDivider() {
                 <img
                   src="/truck-wheel.png"
                   alt=""
+                  width={70}
+                  height={70}
                   className="w-full h-full object-contain pointer-events-none"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
@@ -325,7 +328,11 @@ export default function ConstructionRoadDivider() {
                 <img
                   src="/truck-wheel.png"
                   alt=""
+                  width={70}
+                  height={70}
                   className="w-full h-full object-contain pointer-events-none"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
@@ -344,7 +351,11 @@ export default function ConstructionRoadDivider() {
                 <img
                   src="/truck-wheel.png"
                   alt=""
+                  width={70}
+                  height={70}
                   className="w-full h-full object-contain pointer-events-none"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
@@ -352,6 +363,8 @@ export default function ConstructionRoadDivider() {
               <img
                 src="/concrete-mixer-drum-rotating-v3.webp?v=3"
                 alt="Rotating Concrete Mixer Drum"
+                width={297}
+                height={173}
                 className="absolute pointer-events-none"
                 style={{
                   left: `${(268 / 734) * 100}%`,
@@ -362,15 +375,19 @@ export default function ConstructionRoadDivider() {
                   zIndex: 2,
                 }}
                 loading="eager"
+                decoding="async"
               />
 
               {/* TRUCK BODY (Foreground layer with wheel & drum cutouts, chassis cradle, and cab) */}
               <img
                 src="/concrete-mixer-truck-body.png?v=3"
                 alt="Ganga Homes Concrete Mixer Truck"
+                width={734}
+                height={340}
                 className="w-full h-full object-contain relative pointer-events-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.18)]"
                 style={{ zIndex: 4 }}
                 loading="eager"
+                decoding="async"
               />
             </div>
           </div>

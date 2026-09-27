@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     ],
   },
   compress: true,
+  poweredByHeader: false,
   allowedDevOrigins: ["192.168.1.35", "192.168.*"],
 };
 

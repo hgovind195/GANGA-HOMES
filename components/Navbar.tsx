@@ -127,8 +127,11 @@ export default function Navbar() {
             <img
               src="https://res.cloudinary.com/w1tsvtbe/image/upload/f_webp,q_auto,w_200,c_limit/v1790008909/WhatsApp_Image_2026-09-06_at_1.22.50_PM_dqtlyg.jpg"
               alt="Ganga Homes Logo"
+              width={44}
+              height={44}
               className="w-full h-full rounded-full object-cover bg-[#151515]"
               loading="eager"
+              decoding="async"
             />
           </div>
           <div className="flex flex-col">

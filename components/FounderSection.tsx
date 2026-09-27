@@ -18,6 +18,8 @@ export default function FounderSection() {
               <img
                 src="https://res.cloudinary.com/w1tsvtbe/image/upload/f_webp,q_auto:good,w_900,c_limit/v1790010101/IMG_6595.JPG_ztgkus.jpg"
                 alt="Aneesh V M - Founder & Managing Director, Ganga Homes and Developers"
+                width={900}
+                height={1200}
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
                 decoding="async"

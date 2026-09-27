@@ -87,6 +87,8 @@ export default function ProjectCard({
             <img
               src={getOptimizedImageUrl(image, { width: 1200, format: "webp", quality: "auto:good" })}
               alt={title}
+              width={1200}
+              height={900}
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"
               decoding="async"
@@ -253,6 +255,8 @@ export default function ProjectCard({
                 <img
                   src={getOptimizedImageUrl(image, { width: 1200, format: "webp", quality: "auto:good" })}
                   alt={title}
+                  width={1200}
+                  height={900}
                   className="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
